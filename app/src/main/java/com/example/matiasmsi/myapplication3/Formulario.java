@@ -17,12 +17,12 @@ import android.widget.Toast;
  * Created by MatiasMSI on 07/11/2016.
  */
 
-public class Formulario extends AppCompatActivity implements View.OnClickListener{
+public class Formulario extends AppCompatActivity implements View.OnClickListener {
 
-    RadioGroup radioGroup1,radioGroup2,radioGroup3,radioGroup4,radioGroup5,radioGroup6,radioGroup7;
-    String [] respuestas = new String[6];
-    String pregunta1, pregunta2,pregunta3,pregunta4,pregunta5,pregunta6,pregunta7;
-    Button btn ;
+    RadioGroup radioGroup1, radioGroup2, radioGroup3, radioGroup4, radioGroup5, radioGroup6, radioGroup7, radioGroup8, radioGroup9;
+    String[] respuestas = new String[8];
+    String pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9;
+    Button btn;
 
 
     //chupala
@@ -37,18 +37,21 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         radioGroup5 = (RadioGroup) findViewById(R.id.group5);
         radioGroup6 = (RadioGroup) findViewById(R.id.group6);
         radioGroup7 = (RadioGroup) findViewById(R.id.group7);
+        radioGroup8 = (RadioGroup) findViewById(R.id.group8);
+        radioGroup9 = (RadioGroup) findViewById(R.id.group9);
 
 
         radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == R.id.radio1 ){
-                    Toast.makeText(getApplicationContext(), "si",Toast.LENGTH_SHORT).show();
+                if (i == R.id.radio1) {
+                    Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_SHORT).show();
                     pregunta1 = "SI";
                     respuestas[0] = pregunta1;
+
                     return;
-                }else if (i ==R.id.radio2){
-                    Toast.makeText(getApplicationContext(), "no",Toast.LENGTH_SHORT).show();
+                } else if (i == R.id.radio2) {
+                    Toast.makeText(getApplicationContext(), "no", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -56,11 +59,11 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == R.id.radio3 ){
-                    Toast.makeText(getApplicationContext(), "si",Toast.LENGTH_SHORT).show();
+                if (i == R.id.radio3) {
+                    Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_SHORT).show();
                     pregunta2 = "SI";
-                }else if (i ==R.id.radio4){
-                    Toast.makeText(getApplicationContext(),pregunta1,Toast.LENGTH_SHORT).show();
+                } else if (i == R.id.radio4) {
+                    Toast.makeText(getApplicationContext(), pregunta1, Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -69,11 +72,11 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         radioGroup3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == R.id.radio5 ){
-                    Toast.makeText(getApplicationContext(), "si",Toast.LENGTH_SHORT).show();
+                if (i == R.id.radio5) {
+                    Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_SHORT).show();
                     pregunta3 = "SI";
-                }else if (i ==R.id.radio6){
-                    Toast.makeText(getApplicationContext(),pregunta1,Toast.LENGTH_SHORT).show();
+                } else if (i == R.id.radio6) {
+                    Toast.makeText(getApplicationContext(), pregunta1, Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -82,10 +85,10 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         radioGroup4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == R.id.radio7 ){
-                    Toast.makeText(getApplicationContext(), "si",Toast.LENGTH_SHORT).show();
+                if (i == R.id.radio7) {
+                    Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_SHORT).show();
                     pregunta4 = "SI";
-                }else if (i ==R.id.radio8){
+                } else if (i == R.id.radio8) {
                 }
 
             }
@@ -94,11 +97,11 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         radioGroup5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == R.id.radio9 ){
-                    Toast.makeText(getApplicationContext(), "si",Toast.LENGTH_SHORT).show();
+                if (i == R.id.radio9) {
+                    Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_SHORT).show();
                     pregunta5 = "SI";
-                }else if (i ==R.id.radio10){
-                    Toast.makeText(getApplicationContext(),pregunta1,Toast.LENGTH_SHORT).show();
+                } else if (i == R.id.radio10) {
+                    Toast.makeText(getApplicationContext(), pregunta1, Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -107,24 +110,50 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         radioGroup6.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == R.id.radio11 ){
-                    Toast.makeText(getApplicationContext(), "si",Toast.LENGTH_SHORT).show();
+                if (i == R.id.radio11) {
+                    Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_SHORT).show();
                     pregunta6 = "SI";
-                }else if (i ==R.id.radio12){
-                    Toast.makeText(getApplicationContext(),pregunta1,Toast.LENGTH_SHORT).show();
+                } else if (i == R.id.radio12) {
+                    Toast.makeText(getApplicationContext(), pregunta1, Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
 
+
         radioGroup7.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i == R.id.radio13 ){
-                    Toast.makeText(getApplicationContext(), "si",Toast.LENGTH_SHORT).show();
+                if (i == R.id.radio13) {
+                    Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_SHORT).show();
                     pregunta7 = "SI";
-                }else if (i ==R.id.radio14){
-                    Toast.makeText(getApplicationContext(),pregunta1,Toast.LENGTH_SHORT).show();
+                } else if (i == R.id.radio14) {
+                    Toast.makeText(getApplicationContext(), pregunta1, Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+        radioGroup8.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == R.id.radio15) {
+                    Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_SHORT).show();
+                    pregunta8 = "SI";
+                } else if (i == R.id.radio16) {
+                    Toast.makeText(getApplicationContext(), pregunta1, Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+        radioGroup9.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == R.id.radio17) {
+                    Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_SHORT).show();
+                    pregunta9 = "SI";
+                } else if (i == R.id.radio18) {
+                    Toast.makeText(getApplicationContext(), pregunta1, Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -134,8 +163,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     }
 
 
-
-    public void dialogoPregunta1 (View view){
+    public void dialogoPregunta1(View view) {
         AlertDialog.Builder ventana = new AlertDialog.Builder(this);
         ventana.setMessage("INGRESE SU RESPUESTA");
         ventana.setTitle("Justificacion NO");
@@ -144,10 +172,94 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         ventana.setPositiveButton("SI", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                pregunta1= Et_Respuesta.getText().toString().trim();
-                if(pregunta1.length()!=0){
+                pregunta1 = Et_Respuesta.getText().toString().trim();
+                if (pregunta1.length() != 0) {
+                    Toast.makeText(Formulario.this, "GRACIAS", Toast.LENGTH_SHORT).show();
+                    respuestas[0] = pregunta1;
+                } else {
+                    Toast.makeText(Formulario.this, "DEBE COMPLETAR EL TEXTO", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        ventana.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        ventana.show();
+    }
+
+    public void dialogoPregunta2(View view) {
+        AlertDialog.Builder ventana = new AlertDialog.Builder(this);
+        ventana.setMessage("INGRESE SU RESPUESTA");
+        ventana.setTitle("Justificacion NO");
+        final EditText Et_Respuesta = new EditText(this);
+        ventana.setView(Et_Respuesta);
+        ventana.setPositiveButton("SI", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                pregunta2 = Et_Respuesta.getText().toString().trim();
+                if (pregunta2.length() != 0) {
+                    Toast.makeText(Formulario.this, "GRACIAS", Toast.LENGTH_SHORT).show();
+                    respuestas[1] = pregunta2;
+                } else {
+                    Toast.makeText(Formulario.this, "DEBE COMPLETAR EL TEXTO", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        ventana.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        ventana.show();
+    }
+
+    public void dialogoPregunta3(View view) {
+        AlertDialog.Builder ventana = new AlertDialog.Builder(this);
+        ventana.setMessage("INGRESE SU RESPUESTA");
+        ventana.setTitle("Justificacion NO");
+        final EditText Et_Respuesta = new EditText(this);
+        ventana.setView(Et_Respuesta);
+        ventana.setPositiveButton("SI", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                pregunta3 = Et_Respuesta.getText().toString().trim();
+                if (pregunta3.length() != 0) {
+                    Toast.makeText(Formulario.this, "GRACIAS", Toast.LENGTH_SHORT).show();
+                    respuestas[2] = pregunta3;
+                } else {
+                    Toast.makeText(Formulario.this, "DEBE COMPLETAR EL TEXTO", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        ventana.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        ventana.show();
+    }
+
+    public void dialogoPregunta4 (View view){
+        AlertDialog.Builder ventana = new AlertDialog.Builder(this);
+        ventana.setMessage("INGRESE SU RESPUESTA");
+        ventana.setTitle("Justificacion NO");
+        final EditText Et_Respuesta = new EditText(this);
+        ventana.setView(Et_Respuesta);
+        ventana.setPositiveButton("SI", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                pregunta4= Et_Respuesta.getText().toString().trim();
+                if(pregunta4.length()!=0){
                     Toast.makeText(Formulario.this,"GRACIAS",Toast.LENGTH_SHORT).show();
-                    respuestas[0]=pregunta1;
+                    respuestas[3]=pregunta4;
                 }else{
                     Toast.makeText(Formulario.this,"DEBE COMPLETAR EL TEXTO",Toast.LENGTH_SHORT).show();
                 }
@@ -163,7 +275,145 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         ventana.show();
     }
 
+    public void dialogoPregunta5 (View view){
+        AlertDialog.Builder ventana = new AlertDialog.Builder(this);
+        ventana.setMessage("INGRESE SU RESPUESTA");
+        ventana.setTitle("Justificacion NO");
+        final EditText Et_Respuesta = new EditText(this);
+        ventana.setView(Et_Respuesta);
+        ventana.setPositiveButton("SI", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                pregunta5= Et_Respuesta.getText().toString().trim();
+                if(pregunta5.length()!=0){
+                    Toast.makeText(Formulario.this,"GRACIAS",Toast.LENGTH_SHORT).show();
+                    respuestas[4]=pregunta5;
+                }else{
+                    Toast.makeText(Formulario.this,"DEBE COMPLETAR EL TEXTO",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        ventana.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
 
+            }
+        });
+
+        ventana.show();
+    }
+
+    public void dialogoPregunta6 (View view){
+        AlertDialog.Builder ventana = new AlertDialog.Builder(this);
+        ventana.setMessage("INGRESE SU RESPUESTA");
+        ventana.setTitle("Justificacion NO");
+        final EditText Et_Respuesta = new EditText(this);
+        ventana.setView(Et_Respuesta);
+        ventana.setPositiveButton("SI", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                pregunta6= Et_Respuesta.getText().toString().trim();
+                if(pregunta6.length()!=0){
+                    Toast.makeText(Formulario.this,"GRACIAS",Toast.LENGTH_SHORT).show();
+                    respuestas[5]=pregunta6;
+                }else{
+                    Toast.makeText(Formulario.this,"DEBE COMPLETAR EL TEXTO",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        ventana.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        ventana.show();
+    }
+
+    public void dialogoPregunta7 (View view){
+        AlertDialog.Builder ventana = new AlertDialog.Builder(this);
+        ventana.setMessage("INGRESE SU RESPUESTA");
+        ventana.setTitle("Justificacion NO");
+        final EditText Et_Respuesta = new EditText(this);
+        ventana.setView(Et_Respuesta);
+        ventana.setPositiveButton("SI", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                pregunta7= Et_Respuesta.getText().toString().trim();
+                if(pregunta7.length()!=0){
+                    Toast.makeText(Formulario.this,"GRACIAS",Toast.LENGTH_SHORT).show();
+                    respuestas[6]=pregunta7;
+                }else{
+                    Toast.makeText(Formulario.this,"DEBE COMPLETAR EL TEXTO",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        ventana.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        ventana.show();
+    }
+
+    public void dialogoPregunta8 (View view){
+        AlertDialog.Builder ventana = new AlertDialog.Builder(this);
+        ventana.setMessage("INGRESE SU RESPUESTA");
+        ventana.setTitle("Justificacion NO");
+        final EditText Et_Respuesta = new EditText(this);
+        ventana.setView(Et_Respuesta);
+        ventana.setPositiveButton("SI", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                pregunta8= Et_Respuesta.getText().toString().trim();
+                if(pregunta8.length()!=0){
+                    Toast.makeText(Formulario.this,"GRACIAS",Toast.LENGTH_SHORT).show();
+                    respuestas[7]=pregunta8;
+                }else{
+                    Toast.makeText(Formulario.this,"DEBE COMPLETAR EL TEXTO",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        ventana.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        ventana.show();
+    }
+
+    public void dialogoPregunta9 (View view){
+        AlertDialog.Builder ventana = new AlertDialog.Builder(this);
+        ventana.setMessage("INGRESE SU RESPUESTA");
+        ventana.setTitle("Justificacion NO");
+        final EditText Et_Respuesta = new EditText(this);
+        ventana.setView(Et_Respuesta);
+        ventana.setPositiveButton("SI", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                pregunta9= Et_Respuesta.getText().toString().trim();
+                if(pregunta9.length()!=0){
+                    Toast.makeText(Formulario.this,"GRACIAS",Toast.LENGTH_SHORT).show();
+                    respuestas[8]=pregunta9;
+                }else{
+                    Toast.makeText(Formulario.this,"DEBE COMPLETAR EL TEXTO",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        ventana.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        ventana.show();
+    }
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
