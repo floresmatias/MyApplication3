@@ -11,7 +11,7 @@
     tools:context="com.example.matiasmsi.myapplication3.Formulario">
     //NOTA 1 SCROLLVIEW CONVIERTE EL LAYOUT EN LISTA CON SCROLL
     //NOTA 2 TODOS LOS RADIOS BUTTON CON ID IMPAR SON RESPUESTAS POSITIVAS Y LOS PAR SON LAS NEGACIONES
-   //asd
+   //nuevo pull
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
