@@ -65,6 +65,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
+                    android:onClick="dialogoPregunta2"
                     android:id="@+id/radio4"/>/>
             </RadioGroup>
 
@@ -86,6 +87,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
+                    android:onClick="dialogoPregunta3"
                     android:id="@+id/radio6"/>/>
             </RadioGroup>
 
@@ -107,6 +109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
+                    android:onClick="dialogoPregunta4"
                     android:id="@+id/radio8"/>/>
             </RadioGroup>
 
@@ -128,6 +131,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
+                    android:onClick="dialogoPregunta5"
                     android:id="@+id/radio10"/>/>
             </RadioGroup>
 
@@ -149,6 +153,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
+                    android:onClick="dialogoPregunta6"
                     android:id="@+id/radio12"/>
 
 
@@ -172,6 +177,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
+                    android:onClick="dialogoPregunta7"
                     android:id="@+id/radio14"/>
             </RadioGroup>
             Pregunta 8
@@ -193,6 +199,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
+                    android:onClick="dialogoPregunta8"
                     android:id="@+id/radio16"/>
             </RadioGroup>
             Pregunta 9
@@ -213,6 +220,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="No"
+                    android:onClick="dialogoPregunta9"
                     android:id="@+id/radio18"/>
             </RadioGroup>
 
