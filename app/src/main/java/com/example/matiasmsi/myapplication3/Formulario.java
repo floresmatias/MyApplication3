@@ -1,6 +1,9 @@
 package com.example.matiasmsi.myapplication3;
 
+import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AlertDialog;
@@ -433,8 +436,19 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         });
 
         ventana.show();
-    }
 
+    }
+    private static final String CN_RESPUESTA = "Respuesta";
+    public void insertar (String respuesta){
+        DBPreguntas respuestas1 = new DBPreguntas(this, "DBPreguntas", null, 1);
+        SQLiteDatabase db = respuestas1.getWritableDatabase();
+        ContentValues valores = new ContentValues();
+        valores.put(CN_RESPUESTA,respuesta);
+        db.insert("Fresp",null,valores);
+
+
+
+    }
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -442,9 +456,9 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 String newString = Arrays.toString(respuestas);
                 newString = newString.substring(1,newString.length()-1);
                 Toast.makeText(getApplicationContext(), newString, Toast.LENGTH_SHORT).show();
-                DB_Manager manager = new DB_Manager(this);
-                manager.insertar(newString);
-
+                DBPreguntas respuestas1 = new DBPreguntas(this, "DBPreguntas", null, 1);
+                SQLiteDatabase db = respuestas1.getWritableDatabase();
+                insertar(newString);
 
                 break;
         }
