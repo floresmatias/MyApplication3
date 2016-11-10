@@ -5,22 +5,19 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * Created by NoBuNaGa on 09/11/2016.
+ * Created by NoBuNaGa on 10/11/2016.
  */
 
-public class DB extends SQLiteOpenHelper {
+public class DBPreguntas extends SQLiteOpenHelper {
 
-    private  static final String DB_NAME = "Respuesta";
-    private static final int DB_SCHEME_VERSION  = 1;
-
-
-    public DB(Context context) {
-        super(context, DB_NAME, null, DB_SCHEME_VERSION);
+    public DBPreguntas(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+        super(context, name, factory, version);
     }
+
+    
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(DB_Manager.CREATE_TABLE);
 
     }
 
@@ -28,4 +25,6 @@ public class DB extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
+
+
 }

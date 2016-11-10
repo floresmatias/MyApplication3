@@ -32,6 +32,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.formulario);
 
+
+
         radioGroup1 = (RadioGroup) findViewById(R.id.group1);
         radioGroup2 = (RadioGroup) findViewById(R.id.group2);
         radioGroup3 = (RadioGroup) findViewById(R.id.group3);
@@ -440,6 +442,10 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 String newString = Arrays.toString(respuestas);
                 newString = newString.substring(1,newString.length()-1);
                 Toast.makeText(getApplicationContext(), newString, Toast.LENGTH_SHORT).show();
+                DB_Manager manager = new DB_Manager(this);
+                manager.insertar(newString);
+
+
                 break;
         }
 

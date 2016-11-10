@@ -2,7 +2,6 @@ package com.example.matiasmsi.myapplication3;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,8 +14,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        DB helper = new DB(this);
-        SQLiteDatabase sqLiteDatabase = helper.getWritableDatabase();
+
+
+
 
 
         ListView listView;
