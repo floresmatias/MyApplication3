@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import java.util.Arrays;
 
+
+
 /**
  * Created by MatiasMSI on 07/11/2016.
  */
@@ -27,13 +29,15 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     RadioGroup radioGroup1, radioGroup2, radioGroup3, radioGroup4, radioGroup5, radioGroup6, radioGroup7, radioGroup8, radioGroup9;
     String[] respuestas = new String[9];
     String pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9;
-    Button btn;
+    Button btn,btn2;
+    CompruebaRed cd;
 
 
 
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.formulario);
+        cd = new CompruebaRed(this);
 
 
 
@@ -183,6 +187,9 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         });
         btn = (Button) findViewById(R.id.btnArreglo);
         btn.setOnClickListener(this);
+        btn2 = (Button) findViewById(R.id.btnConexion);
+        btn2.setOnClickListener(this);
+        //new CompruebaRed.AsyncConnectTask().execute();
     }
 
 
@@ -452,7 +459,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btnArreglo:
+
+            case  R.id.btnArreglo:
                 String newString = Arrays.toString(respuestas);
                 newString = newString.substring(1,newString.length()-1);
                 Toast.makeText(getApplicationContext(), newString, Toast.LENGTH_SHORT).show();
@@ -463,6 +471,13 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 break;
             case R.id.btnJason:
 
+                break;
+            case R.id.btnConexion:
+                if (cd.isConnected()) {
+                    Toast.makeText(Formulario.this,"conectado",Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(Formulario.this,"no conectado",Toast.LENGTH_SHORT).show();
+                }
                 break;
         }
 
