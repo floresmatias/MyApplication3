@@ -15,12 +15,12 @@ public class Receptor extends Activity {
 
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.formulario);
+        setContentView(R.layout.activity_vistaobrasoap);
     }
 
     public  void EnviarOnclic(View v){
 
-        EditText 
+
 
         Thread thread = new Thread(){
             String res;
@@ -32,7 +32,7 @@ public class Receptor extends Activity {
                 String SOAP_ACTION ="http://tempuri.org/WM_INS_REPORTE";
 
                 SoapObject request = new SoapObject(NAMESPACE,METHOD_NAME);
-                request.addProperty("",value)
+                //request.addProperty("",value)
             }
 
 
