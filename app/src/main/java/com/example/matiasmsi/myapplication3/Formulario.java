@@ -1,6 +1,9 @@
 package com.example.matiasmsi.myapplication3;
 
+import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AlertDialog;
@@ -13,6 +16,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.util.Arrays;
+
 /**
  * Created by MatiasMSI on 07/11/2016.
  */
@@ -20,7 +25,7 @@ import android.widget.Toast;
 public class Formulario extends AppCompatActivity implements View.OnClickListener {
 
     RadioGroup radioGroup1, radioGroup2, radioGroup3, radioGroup4, radioGroup5, radioGroup6, radioGroup7, radioGroup8, radioGroup9;
-    String[] respuestas = new String[8];
+    String[] respuestas = new String[9];
     String pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9;
     Button btn;
 
@@ -29,6 +34,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.formulario);
+
+
 
         radioGroup1 = (RadioGroup) findViewById(R.id.group1);
         radioGroup2 = (RadioGroup) findViewById(R.id.group2);
@@ -62,6 +69,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 if (i == R.id.radio3) {
                     Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_SHORT).show();
                     pregunta2 = "SI";
+                    respuestas[1] = pregunta2;
+                    return;
                 } else if (i == R.id.radio4) {
                     Toast.makeText(getApplicationContext(), pregunta1, Toast.LENGTH_SHORT).show();
                 }
@@ -75,6 +84,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 if (i == R.id.radio5) {
                     Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_SHORT).show();
                     pregunta3 = "SI";
+                    respuestas[2] = pregunta3;
+                    return;
                 } else if (i == R.id.radio6) {
                     Toast.makeText(getApplicationContext(), pregunta1, Toast.LENGTH_SHORT).show();
                 }
@@ -88,6 +99,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 if (i == R.id.radio7) {
                     Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_SHORT).show();
                     pregunta4 = "SI";
+                    respuestas[3] = pregunta4;
+                    return;
                 } else if (i == R.id.radio8) {
                 }
 
@@ -100,6 +113,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 if (i == R.id.radio9) {
                     Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_SHORT).show();
                     pregunta5 = "SI";
+                    respuestas[4] = pregunta5;
+                    return;
                 } else if (i == R.id.radio10) {
                     Toast.makeText(getApplicationContext(), pregunta1, Toast.LENGTH_SHORT).show();
                 }
@@ -113,6 +128,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 if (i == R.id.radio11) {
                     Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_SHORT).show();
                     pregunta6 = "SI";
+                    respuestas[5] = pregunta6;
+                    return;
                 } else if (i == R.id.radio12) {
                     Toast.makeText(getApplicationContext(), pregunta1, Toast.LENGTH_SHORT).show();
                 }
@@ -127,6 +144,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 if (i == R.id.radio13) {
                     Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_SHORT).show();
                     pregunta7 = "SI";
+                    respuestas[6] = pregunta7;
+                    return;
                 } else if (i == R.id.radio14) {
                     Toast.makeText(getApplicationContext(), pregunta1, Toast.LENGTH_SHORT).show();
                 }
@@ -140,6 +159,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 if (i == R.id.radio15) {
                     Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_SHORT).show();
                     pregunta8 = "SI";
+                    respuestas[7] = pregunta8;
+                    return;
                 } else if (i == R.id.radio16) {
                     Toast.makeText(getApplicationContext(), pregunta1, Toast.LENGTH_SHORT).show();
                 }
@@ -152,6 +173,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 if (i == R.id.radio17) {
                     Toast.makeText(getApplicationContext(), "si", Toast.LENGTH_SHORT).show();
                     pregunta9 = "SI";
+                    respuestas[8] = pregunta9;
+                    return;
                 } else if (i == R.id.radio18) {
                     Toast.makeText(getApplicationContext(), pregunta1, Toast.LENGTH_SHORT).show();
                 }
@@ -413,12 +436,30 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         });
 
         ventana.show();
+
+    }
+    private static final String CN_RESPUESTA = "Respuesta";
+    public void insertar (String respuesta){
+        DBPreguntas respuestas1 = new DBPreguntas(this, "DBPreguntas", null, 1);
+        SQLiteDatabase db = respuestas1.getWritableDatabase();
+        ContentValues valores = new ContentValues();
+        valores.put(CN_RESPUESTA,respuesta);
+        db.insert("Fresp",null,valores);
+
+
+
     }
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btnArreglo:
-                Toast.makeText(getApplicationContext(), respuestas[0], Toast.LENGTH_SHORT).show();
+                String newString = Arrays.toString(respuestas);
+                newString = newString.substring(1,newString.length()-1);
+                Toast.makeText(getApplicationContext(), newString, Toast.LENGTH_SHORT).show();
+                DBPreguntas respuestas1 = new DBPreguntas(this, "DBPreguntas", null, 1);
+                SQLiteDatabase db = respuestas1.getWritableDatabase();
+                insertar(newString);
+
                 break;
         }
 
