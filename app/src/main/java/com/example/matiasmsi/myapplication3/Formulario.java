@@ -30,7 +30,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     Button btn;
 
 
-    //chupala
+
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.formulario);
@@ -459,6 +459,9 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 DBPreguntas respuestas1 = new DBPreguntas(this, "DBPreguntas", null, 1);
                 SQLiteDatabase db = respuestas1.getWritableDatabase();
                 insertar(newString);
+
+                break;
+            case R.id.btnJason:
 
                 break;
         }
