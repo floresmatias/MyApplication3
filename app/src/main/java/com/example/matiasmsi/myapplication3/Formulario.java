@@ -467,7 +467,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
                 DBPreguntas respuestas1 = new DBPreguntas(this, "DBPreguntas", null, 1);
                 SQLiteDatabase db = respuestas1.getWritableDatabase();
                 insertar(newString);
-
+//asd
                 String [] arreglocursor = new String[]{};
                 Cursor c = db.rawQuery("SELECT * FROM Fresp WHERE Respuesta=?",arreglocursor);
                 if (c.moveToFirst()) {

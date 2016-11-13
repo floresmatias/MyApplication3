@@ -10,19 +10,27 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBPreguntas extends SQLiteOpenHelper {
 
+    public String sqlcreate = "CREATE TABLE Fresp (Id INTEGER PRIMARY KEY AUTOINCREMENT, Respuesta TEXT)";
+
+
+
     public DBPreguntas(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
-    
+
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(sqlcreate);
+
+
 
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL("drop table if exist Fresp");
 
     }
 
