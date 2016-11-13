@@ -1,21 +1,20 @@
 package com.example.matiasmsi.myapplication3;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
-import android.support.annotation.IdRes;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.text.CollationElementIterator;
 import java.util.Arrays;
 
 
@@ -32,7 +31,8 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     Button btn,btn2;
     CompruebaRed cd;
 
-
+    Context editText;
+    private CollationElementIterator textview;
 
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -463,10 +463,24 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
             case  R.id.btnArreglo:
                 String newString = Arrays.toString(respuestas);
                 newString = newString.substring(1,newString.length()-1);
-                Toast.makeText(getApplicationContext(), newString, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), newString, Toast.LENGTH_SHORT).show();
                 DBPreguntas respuestas1 = new DBPreguntas(this, "DBPreguntas", null, 1);
                 SQLiteDatabase db = respuestas1.getWritableDatabase();
                 insertar(newString);
+
+                String [] arreglocursor = new String[]{};
+                Cursor c = db.rawQuery("SELECT * FROM Fresp WHERE Respuesta=?",arreglocursor);
+                if (c.moveToFirst()) {
+                    Integer Id = c.getInt(0);
+                    String Respuesta = c.getString(1);
+                    String nuevostring = Arrays.toString(arreglocursor);
+                    nuevostring = nuevostring.substring(1,newString.length()-1);
+                    Toast.makeText(getApplicationContext(), nuevostring, Toast.LENGTH_SHORT).show();
+
+                }
+
+
+
 
                 break;
             case R.id.btnJason:
