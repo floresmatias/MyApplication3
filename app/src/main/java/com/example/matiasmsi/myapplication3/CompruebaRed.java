@@ -6,23 +6,15 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.Toast;
-
-import static android.content.ContentValues.TAG;
-import static android.media.audiofx.NoiseSuppressor.isAvailable;
-import android.app.Service;
-
-import java.util.Timer;
 
 
 /**
  * Created by MatiasMSI on 12/11/2016.
  */
 
-public class CompruebaRed extends AppCompatActivity{
+public class CompruebaRed extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
