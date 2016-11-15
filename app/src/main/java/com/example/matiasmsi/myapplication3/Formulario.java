@@ -5,9 +5,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +37,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     private CollationElementIterator textview;
 
     protected void onCreate(final Bundle savedInstanceState) {
+        Log.d("hola","estoy en Formulario");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.formulario);
         cd = new CompruebaRed(this);
@@ -463,23 +466,19 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
             case  R.id.btnArreglo:
                 String newString = Arrays.toString(respuestas);
                 newString = newString.substring(1,newString.length()-1);
-                //Toast.makeText(getApplicationContext(), newString, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), newString, Toast.LENGTH_SHORT).show();
                 DBPreguntas respuestas1 = new DBPreguntas(this, "DBPreguntas", null, 1);
                 SQLiteDatabase db = respuestas1.getWritableDatabase();
                 insertar(newString);
 //asd
-                String [] arreglocursor = new String[]{};
-                Cursor c = db.rawQuery("SELECT * FROM Fresp WHERE Respuesta=?",arreglocursor);
-                if (c.moveToFirst()) {
-                    Integer Id = c.getInt(0);
-                    String Respuesta = c.getString(1);
-                    String nuevostring = Arrays.toString(arreglocursor);
-                    nuevostring = nuevostring.substring(1,newString.length()-1);
-                    Toast.makeText(getApplicationContext(), nuevostring, Toast.LENGTH_SHORT).show();
-
-                }
-
-
+              //  String [] arreglocursor = new String[]{};
+                //Cursor c = db.rawQuery("SELECT * FROM Fresp WHERE Respuesta=?",arreglocursor);
+                //if (c.moveToFirst()) {
+                 //   Integer Id = c.getInt(0);
+                  //  String Respuesta = c.getString(1);
+                   // String nuevostring = Arrays.toString(arreglocursor);
+                   // nuevostring = nuevostring.substring(1,newString.length()-1);
+                    //Toast.makeText(getApplicationContext(), nuevostring, Toast.LENGTH_SHORT).show();
 
 
                 break;
@@ -496,5 +495,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
         }
 
     }
+
+
 }
 
