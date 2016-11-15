@@ -32,7 +32,7 @@ public class Formulario extends AppCompatActivity implements View.OnClickListene
     String pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9;
     Button btn,btn2;
     CompruebaRed cd;
-
+//chupalo
     Context editText;
     private CollationElementIterator textview;
 
